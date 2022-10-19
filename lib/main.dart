@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gitpractice/next_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,10 +10,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('hello world!'),
+          child: GestureDetector(
+              onTap: () => Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (context) => NextPage())),
+              child: Text('hello world!')),
         ),
       ),
     );
